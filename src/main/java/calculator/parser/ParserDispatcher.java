@@ -6,7 +6,7 @@ import java.util.List;
 public class ParserDispatcher {
 
     public static List<BigDecimal> parse(String input) {
-        if (input.startsWith("//")) {
+        if (CustomDelimiterParser.isCustomDelimiterFormat(input)) {
             return CustomDelimiterParser.parse(input);
         }
         return DefaultDelimiterParser.parse(input);
