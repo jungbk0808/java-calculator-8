@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class DefaultDelimiterParser {
 
-    private static final String DEFAULT_DELIMITER_REGEX = "[,;]";
+    private static final String DEFAULT_DELIMITER_REGEX = "[,:]";
     private static final Pattern DEFAULT_DELIMITED_NUMBERS_PATTERN =
             Pattern.compile(
                     "(\\d+(\\.\\d+)?" + DEFAULT_DELIMITER_REGEX + ")*" + // 소수점 포함 숫자 + 구분자 반복
