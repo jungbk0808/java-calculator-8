@@ -15,11 +15,11 @@ public class DecimalParser {
                     "\\d+(\\.\\d+)?"                                     // 마지막 숫자
             );
 
-    private static final int CUSTOM_DELIMITER_PREFIX_LENGTH = 4;
+    private static final int CUSTOM_DELIMITER_PREFIX_LENGTH = 5;
     private static final String CUSTOM_DELIMITER = "delimiter";
     private static final Pattern CUSTOM_DELIMITED_NUMBERS_PATTERN =
             Pattern.compile(
-                    "//(?<" + CUSTOM_DELIMITER + ">[^.\\d])\n" +                   // '.'과 숫자를 제외한 custom delimiter
+                    "//(?<" + CUSTOM_DELIMITER + ">[^.\\d])\\\\n" +                   // '.'과 숫자를 제외한 custom delimiter
                     "(\\d+(\\.\\d+)?\\k<" + CUSTOM_DELIMITER + ">)*\\d+(\\.\\d+)?" // 숫자와 delimiter 반복
             );
 
