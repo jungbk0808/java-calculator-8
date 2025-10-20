@@ -1,4 +1,4 @@
-package calculator;
+package calculator.util;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -22,6 +22,8 @@ public class DecimalParser {
                     "//(?<" + CUSTOM_DELIMITER + ">[^.\\d])\\\\n" +                   // '.'과 숫자를 제외한 custom delimiter
                     "(\\d+(\\.\\d+)?\\k<" + CUSTOM_DELIMITER + ">)*\\d+(\\.\\d+)?" // 숫자와 delimiter 반복
             );
+
+    private DecimalParser() {}
 
     public static List<BigDecimal> parse(String input) {
         if (input.startsWith("//")) {
